@@ -32,10 +32,11 @@ export class App extends Component {
     evt.preventDefault();
     const value = evt.currentTarget.elements.search.value.trim();
     if (!value) {
+      const textError = 'Please enter a valid value';
       this.setState({
-        error: 'Please enter a valid value',
+        error: textError,
       });
-      toast.error(`${this.state.error}`, { position: 'top-center' });
+      toast.error(`${textError}`, { position: 'top-center' });
       evt.target.reset();
       return;
     }
